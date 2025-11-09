@@ -25,8 +25,13 @@ const handleOrderRequest = (productName: string) => {
   const message = [intro, body, request, closing].join("\n\n")
   const encoded = encodeURIComponent(message)
   
-  // Force WhatsApp Web instead of desktop app
-  const url = `https://web.whatsapp.com/send?phone=${sanitized}&text=${encoded}`
+  // Detect mobile device
+  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+  
+  // Use WhatsApp app on mobile, WhatsApp Web on desktop
+  const url = isMobile 
+    ? `https://wa.me/${sanitized}?text=${encoded}` // Mobile: Opens WhatsApp app
+    : `https://web.whatsapp.com/send?phone=${sanitized}&text=${encoded}` // Desktop: Opens WhatsApp Web
   
   // Open in new window
   window.open(url, "_blank")
