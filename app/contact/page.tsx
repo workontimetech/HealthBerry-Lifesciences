@@ -16,20 +16,55 @@ export default function ContactPage() {
     message: "",
   })
   const [submitted, setSubmitted] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [error, setError] = useState("")
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target
     setFormData((prev) => ({ ...prev, [name]: value }))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission
-    setSubmitted(true)
-    setTimeout(() => {
-      setFormData({ name: "", email: "", phone: "", subject: "", message: "" })
-      setSubmitted(false)
-    }, 3000)
+    setIsSubmitting(true)
+    setError("")
+
+    try {
+      // Web3Forms API endpoint
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: "",
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          subject: formData.subject,
+          message: formData.message,
+          from_name: "Health Berry Website Contact Form",
+        }),
+      })
+
+      const result = await response.json()
+
+      if (result.success) {
+        setSubmitted(true)
+        setFormData({ name: "", email: "", phone: "", subject: "", message: "" })
+        setTimeout(() => {
+          setSubmitted(false)
+        }, 5000)
+      } else {
+        setError("Failed to send message. Please try again.")
+      }
+    } catch (err) {
+      setError("An error occurred. Please try again later.")
+      console.error("Form submission error:", err)
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const contactInfo = [
@@ -103,8 +138,14 @@ export default function ContactPage() {
               </p>
 
               {submitted && (
-                <div className="mb-8 p-4 bg-secondary/10 border border-secondary text-secondary rounded-lg text-center">
-                  Thank you for your message! We'll be in touch soon.
+                <div className="mb-8 p-4 bg-green-50 border border-green-500 text-green-700 rounded-lg text-center">
+                  ✅ Thank you for your message! We'll be in touch soon.
+                </div>
+              )}
+
+              {error && (
+                <div className="mb-8 p-4 bg-red-50 border border-red-500 text-red-700 rounded-lg text-center">
+                  ❌ {error}
                 </div>
               )}
 
@@ -183,10 +224,20 @@ export default function ContactPage() {
 
                 <button
                   type="submit"
-                  className="w-full px-6 py-4 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-all hover:shadow-lg flex items-center justify-center gap-2"
+                  disabled={isSubmitting}
+                  className="w-full px-6 py-4 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-all hover:shadow-lg flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  <Send size={20} />
-                  Send Message
+                  {isSubmitting ? (
+                    <>
+                      <span className="animate-spin">⏳</span>
+                      Sending...
+                    </>
+                  ) : (
+                    <>
+                      <Send size={20} />
+                      Send Message
+                    </>
+                  )}
                 </button>
               </form>
             </div>

@@ -78,15 +78,15 @@ export default function Hero() {
 
   const pharmaImages = [
     {
-      src: "/pharmaceutical-laboratory-testing.svg",
-      alt: "Pharmaceutical Laboratory Testing",
+      src: "/Stability-Studies.jpg",
+      alt: "Pharmaceutical laboratory testing",
     },
     {
       src: "/pharmaceutical-manufacturing-facility.jpg",
       alt: "Manufacturing Facility",
     },
     {
-      src: "/green-sustainable-manufacturing.svg",
+      src: "/download.jpeg",
       alt: "Sustainable Manufacturing",
     },
     {

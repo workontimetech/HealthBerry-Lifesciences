@@ -1,11 +1,12 @@
 "use client"
 
 import { useState } from "react"
+import { useRouter } from "next/navigation"
 import Image from "next/image"
 import { TiltCard } from "@/components/ui/tilt-card"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
-import { Search, MessageCircle } from "lucide-react"
+import { Search, MessageCircle, Info } from "lucide-react"
 import { categories, allProducts } from "@/lib/products-data"
 
 // WhatsApp message handler (pre‑typed structured inquiry including product name)
@@ -215,11 +216,13 @@ function ProductCard({
   onOrderRequest: (productName: string) => void 
 }) {
   const [isExpanded, setIsExpanded] = useState(false)
+  const router = useRouter()
 
   return (
     <TiltCard className={`stagger-${(delay % 6) + 1}`}>
       <div
-        className={`group glow-card bg-white rounded-xl border border-border overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 hover-lift`}
+        onClick={() => router.push(`/products/${product.id}`)}
+        className={`group glow-card bg-white rounded-xl border border-border overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 hover-lift cursor-pointer`}
         style={{ animationDelay: `${delay * 0.05}s` }}
       >
       {/* Product Image */}
@@ -266,14 +269,29 @@ function ProductCard({
           </div>
         </div>
 
-        {/* Action Button */}
-        <button
-          onClick={() => onOrderRequest(product.name)}
-          className="w-full mt-4 px-4 py-2.5 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-all flex items-center justify-center gap-2 group/btn"
-        >
-          <MessageCircle size={18} className="group-hover/btn:scale-110 transition-transform" />
-          <span>Order Request</span>
-        </button>
+        {/* Action Buttons */}
+        <div className="grid grid-cols-2 gap-2 mt-4">
+          <button
+            onClick={(e) => {
+              e.stopPropagation()
+              router.push(`/products/${product.id}`)
+            }}
+            className="px-4 py-2.5 bg-white border-2 border-primary text-primary rounded-lg font-semibold hover:bg-primary/5 transition-all flex items-center justify-center gap-2 group/btn"
+          >
+            <Info size={18} className="group-hover/btn:scale-110 transition-transform" />
+            <span>View Info</span>
+          </button>
+          <button
+            onClick={(e) => {
+              e.stopPropagation()
+              onOrderRequest(product.name)
+            }}
+            className="px-4 py-2.5 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-all flex items-center justify-center gap-2 group/btn"
+          >
+            <MessageCircle size={18} className="group-hover/btn:scale-110 transition-transform" />
+            <span>Order</span>
+          </button>
+        </div>
       </div>
       </div>
     </TiltCard>

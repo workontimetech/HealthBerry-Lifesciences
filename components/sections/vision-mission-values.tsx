@@ -77,13 +77,13 @@ export default function VisionMissionValues() {
           {mottoItems.map((item) => {
             const Icon = item.icon
             return (
-              <div key={item.title}>
+              <div key={item.title} className="h-full">
                 <TiltCard className="h-full">
                   <div
-                    className={`glow-card group relative rounded-2xl overflow-hidden transition-all duration-300 cursor-pointer hover:shadow-xl border border-white/50 hover:border-white ${item.color}`}
+                    className={`glow-card group relative rounded-2xl overflow-hidden transition-all duration-300 cursor-pointer hover:shadow-xl border border-white/50 hover:border-white ${item.color} h-full flex flex-col`}
                     onClick={() => setExpandedId(expandedId === item.title ? null : item.title)}
                   >
-                    <div className="p-8">
+                    <div className="p-8 flex flex-col h-full min-h-[380px]">
                   {/* Circular Icon */}
                       <div className="flex justify-center mb-6">
                     <div
@@ -97,7 +97,7 @@ export default function VisionMissionValues() {
                       <h3 className={`text-2xl font-bold text-center ${item.textColor} mb-4`}>{item.title}</h3>
 
                   {/* Description */}
-                      <p className="text-center text-gray-700 text-sm leading-relaxed">{item.description}</p>
+                      <p className="text-center text-gray-700 text-sm leading-relaxed flex-grow">{item.description}</p>
 
                   {/* Expand Indicator */}
                       <div className="flex justify-center mt-4 opacity-0 group-hover:opacity-100 transition-opacity">

@@ -180,24 +180,50 @@ export default function Footer() {
         </div>
 
         {/* Bottom Section */}
-        <div className="py-8 grid md:grid-cols-2 gap-8 items-center">
-          <div className="text-gray-400 text-sm">
-            <p>&copy; 2025 Health Berry Lifesciences Pvt. Ltd. All rights reserved.</p>
+        <div className="py-8 border-b border-slate-800">
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div className="text-gray-400 text-sm">
+              <p>&copy; 2025 Health Berry Lifesciences Pvt. Ltd. All rights reserved.</p>
+            </div>
+            <div className="flex flex-wrap gap-6 justify-start md:justify-end text-gray-400 text-sm">
+              <Link href="#" className="hover:text-primary transition-colors">
+                Privacy Policy
+              </Link>
+              <Link href="#" className="hover:text-primary transition-colors">
+                Terms & Conditions
+              </Link>
+              <Link href="#" className="hover:text-primary transition-colors">
+                Cookie Policy
+              </Link>
+              <Link href="#" className="hover:text-primary transition-colors">
+                Compliance
+              </Link>
+            </div>
           </div>
-          <div className="flex flex-wrap gap-6 justify-start md:justify-end text-gray-400 text-sm">
-            <Link href="#" className="hover:text-primary transition-colors">
-              Privacy Policy
-            </Link>
-            <Link href="#" className="hover:text-primary transition-colors">
-              Terms & Conditions
-            </Link>
-            <Link href="#" className="hover:text-primary transition-colors">
-              Cookie Policy
-            </Link>
-            <Link href="#" className="hover:text-primary transition-colors">
-              Compliance
-            </Link>
-          </div>
+        </div>
+
+        {/* Creator Credits */}
+        <div className="py-6 text-center">
+          <p className="text-gray-400 text-sm">
+            Created by{" "}
+            <a
+              href="https://www.linkedin.com/in/atharv-patil-539710233"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary hover:text-primary/80 transition-colors font-medium"
+            >
+              Atharv Patil
+            </a>
+            {" "}&{" "}
+            <a
+              href="https://www.linkedin.com/in/rushikesh-bandiwadekar-9114a42a6/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-primary hover:text-primary/80 transition-colors font-medium"
+            >
+              Rushikesh Bandiwadekar
+            </a>
+          </p>
         </div>
       </div>
     </footer>

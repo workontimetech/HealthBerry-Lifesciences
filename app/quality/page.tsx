@@ -150,7 +150,7 @@ export default function QualityPage() {
               </div>
               <div className="rounded-2xl overflow-hidden shadow-xl">
                 <img
-                  src="/placeholder.svg?key=quality"
+                  src="/QUALITY-MANUFACTURING.jpeg"
                   alt="Quality testing laboratory"
                   className="w-full h-full object-cover"
                 />
@@ -265,7 +265,7 @@ export default function QualityPage() {
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div className="rounded-2xl overflow-hidden shadow-xl">
                 <img
-                  src="/placeholder.svg?key=sustainability"
+                  src="/SUSTAINABLE MANUFACTURING.png"
                   alt="Sustainable manufacturing practices"
                   className="w-full h-full object-cover"
                 />
