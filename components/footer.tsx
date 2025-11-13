@@ -186,16 +186,16 @@ export default function Footer() {
               <p>&copy; 2025 Health Berry Lifesciences Pvt. Ltd. All rights reserved.</p>
             </div>
             <div className="flex flex-wrap gap-6 justify-start md:justify-end text-gray-400 text-sm">
-              <Link href="#" className="hover:text-primary transition-colors">
+              <Link href="/privacy-policy" className="hover:text-primary transition-colors">
                 Privacy Policy
               </Link>
-              <Link href="#" className="hover:text-primary transition-colors">
+              <Link href="/terms-conditions" className="hover:text-primary transition-colors">
                 Terms & Conditions
               </Link>
-              <Link href="#" className="hover:text-primary transition-colors">
+              <Link href="/cookie-policy" className="hover:text-primary transition-colors">
                 Cookie Policy
               </Link>
-              <Link href="#" className="hover:text-primary transition-colors">
+              <Link href="/compliance" className="hover:text-primary transition-colors">
                 Compliance
               </Link>
             </div>
