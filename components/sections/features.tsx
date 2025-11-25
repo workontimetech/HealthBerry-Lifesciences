@@ -6,7 +6,7 @@ const features = [
   {
     icon: Beaker,
     title: "Quality Manufacturing",
-    description: "State-of-the-art facilities with GMP and ISO certifications ensuring highest quality standards.",
+    description: "State-of-the-art facilities with WHO-GMP, ISO And USFDA certifications ensuring highest quality standards.",
   },
   {
     icon: Shield,

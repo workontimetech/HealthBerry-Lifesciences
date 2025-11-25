@@ -2,6 +2,7 @@
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
 import VisionMissionValues from "@/components/sections/vision-mission-values"
+import Founder from "@/components/sections/founder"
 
 const milestones = [
   { year: 2015, title: "Founded", description: "Health Berry Lifesciences established" },
@@ -67,6 +68,9 @@ export default function AboutPage() {
         {/* Vision Mission Values Section */}
         <VisionMissionValues />
 
+        {/* Founder Section */}
+        <Founder />
+
         {/* Milestones */}
         <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -95,10 +99,10 @@ export default function AboutPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-4 gap-8">
               {[
-                { number: "200+", label: "Products", sublabel: "Pharmaceutical Solutions" },
-                { number: "5M+", label: "Patients", sublabel: "Served Annually" },
+                { number: "40+", label: "Products", sublabel: "Pharmaceutical Solutions" },
+                { number: "5L+", label: "Patients", sublabel: "Served Annually" },
                 { number: "98%", label: "Satisfaction", sublabel: "Customer Rating" },
-                { number: "2000+", label: "Employees", sublabel: "Dedicated Team" },
+                { number: "50+", label: "Employees", sublabel: "Dedicated Team" },
               ].map((stat, index) => (
                 <div
                   key={index}

@@ -4,7 +4,7 @@ import { CheckCircle2 } from "lucide-react"
 
 const benefits = [
   "Advanced manufacturing facilities with cutting-edge technology",
-  "GMP, ISO, and WHO certified operations",
+  "WHO-GMP, ISO And USFDA certified operations",
   "Rigorous quality control at every stage",
   "Ethical and transparent business practices",
   "Wide distribution network across India",

@@ -14,6 +14,7 @@ export default function Navbar() {
     { href: "/quality", label: "Quality" },
     { href: "/careers", label: "Careers" },
     { href: "/contact", label: "Contact" },
+    { href: "https://sg2plzcpnl491283.prod.sin2.secureserver.net:2096/", label: "Login", external: true },
   ]
 
   return (
@@ -32,14 +33,27 @@ export default function Navbar() {
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-1">
             {navLinks.map((link, index) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="px-3 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors relative group"
-              >
-                {link.label}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
-              </Link>
+              link.external ? (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-3 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors relative group"
+                >
+                  {link.label}
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
+                </a>
+              ) : (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="px-3 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors relative group"
+                >
+                  {link.label}
+                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
+                </Link>
+              )
             ))}
           </div>
 
@@ -66,14 +80,27 @@ export default function Navbar() {
         {isOpen && (
           <div className="md:hidden pb-4 space-y-2 animate-in fade-in slide-in-from-top-2">
             {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="block px-3 py-2 text-foreground hover:text-primary transition-colors duration-300"
-                onClick={() => setIsOpen(false)}
-              >
-                {link.label}
-              </Link>
+              link.external ? (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block px-3 py-2 text-foreground hover:text-primary transition-colors duration-300"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {link.label}
+                </a>
+              ) : (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="block px-3 py-2 text-foreground hover:text-primary transition-colors duration-300"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {link.label}
+                </Link>
+              )
             ))}
             <Link
               href="/contact"

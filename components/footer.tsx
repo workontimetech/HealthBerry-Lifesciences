@@ -130,7 +130,7 @@ export default function Footer() {
                 <div>
                   <p className="text-sm text-gray-400">Office No.2, S. No 40/2</p>
                   <p className="text-sm text-gray-400">Near Sinhgad College</p>
-                  <p className="text-sm text-gray-500">Kondhawa Budruk, Pune, Maharashtra 411048</p>
+                  <p className="text-sm text-gray-400">Kondhawa Budruk, Pune, Maharashtra 411048</p>
                 </div>
               </li>
               <li className="flex gap-3">

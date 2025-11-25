@@ -31,8 +31,8 @@ const qualityCertifications = [
     icon: Leaf,
   },
   {
-    name: "FSSAI Approved",
-    description: "Food Safety & Standards Authority",
+    name: "USFDA Approved",
+    description: "United States Food and Drug Administration",
     icon: Beaker,
   },
 ]

@@ -6,6 +6,7 @@ import { useState } from "react"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
 import { Mail, Phone, MapPin, Clock, Send } from "lucide-react"
+import { sub } from "date-fns"
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -78,13 +79,13 @@ export default function ContactPage() {
       icon: Mail,
       title: "Email",
       details: "info@healthberrylifesciences.com",
-      sublabel: "sales@healthberrylifesciences.com",
+      sublabel: "pmt@healthberrylifesciences.com ",
     },
     {
       icon: Clock,
       title: "Business Hours",
-      details: "Monday - Friday 9:00 AM - 6:00 PM",
-      sublabel: "Saturday 10:00 AM - 2:00 PM",
+      details: "Monday - Saturday 10:00 AM - 6:00 PM",
+      sublabel: "Saturday 10:00 AM - 2:00 PM  Sunday Off",
     },
   ]
 
@@ -258,7 +259,7 @@ export default function ContactPage() {
                 },
                 {
                   department: "Quality & Compliance",
-                  email: "quality@healthberrylifesciences.com",
+                  email: "pmt@healthberrylifesciences.com",
                   focus: "Regulatory & quality assurance",
                 },
                 {
