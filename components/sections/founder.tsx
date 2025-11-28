@@ -38,7 +38,7 @@ export default function Founder() {
           <div className="flex items-start justify-center md:justify-end md:ml-8">
             <div className="relative w-80 h-80 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-gray-200 shadow-xl">
               <Image
-                src="/Founderphoto2.png"
+                src="/Founderphoto2.jpg"
                 alt="Founder - Health Berry Lifesciences"
                 fill
                 className="object-cover"
