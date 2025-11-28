@@ -68,12 +68,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ]
 
-  // Product pages
+  // Product pages with higher priority
   const productPages = allProducts.map((product) => ({
     url: `${baseUrl}/products/${product.id}`,
     lastModified: new Date(),
     changeFrequency: 'weekly' as const,
-    priority: 0.8,
+    priority: 0.9,
   }))
 
   return [...staticPages, ...productPages]

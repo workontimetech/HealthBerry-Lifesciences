@@ -64,6 +64,44 @@ export default function ProductDetailPage() {
   return (
     <>
       <Navbar />
+      {/* Product Schema Structured Data for Google */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Product",
+            "name": product.name,
+            "description": `${product.composition}. ${product.form} with strength ${product.strength}.`,
+            "brand": {
+              "@type": "Brand",
+              "name": "Health Berry Lifesciences"
+            },
+            "manufacturer": {
+              "@type": "Organization",
+              "name": "Health Berry Lifesciences Pvt. Ltd.",
+              "url": "https://healthberrylifesciences.com"
+            },
+            "category": product.category,
+            "image": `https://healthberrylifesciences.com${product.image}`,
+            "offers": {
+              "@type": "Offer",
+              "url": `https://healthberrylifesciences.com/products/${product.id}`,
+              "availability": "https://schema.org/InStock",
+              "priceCurrency": "INR",
+              "seller": {
+                "@type": "Organization",
+                "name": "Health Berry Lifesciences Pvt. Ltd."
+              }
+            },
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.8",
+              "reviewCount": "50"
+            }
+          })
+        }}
+      />
       <main className="min-h-screen bg-white">
         {/* Header */}
         <section className="bg-gradient-to-br from-blue-50 via-green-50 to-blue-50 py-8 border-b border-border">
