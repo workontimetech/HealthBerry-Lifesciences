@@ -21,7 +21,7 @@ export default function AboutPage() {
         {/* Page Header */}
         <section className="bg-gradient-to-br from-blue-50 to-green-50 py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center">
+            <div className="text-center fade-in-up">
               <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-4">About Us</h1>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
                 Delivering Quality Healthcare Through Ethical Pharmaceutical Innovation
@@ -80,7 +80,7 @@ export default function AboutPage() {
               {milestones.map((milestone, index) => (
                 <div
                   key={index}
-                  className="relative bg-gradient-to-br from-primary/5 to-secondary/5 rounded-xl p-8 border border-border"
+                  className="relative bg-gradient-to-br from-primary/5 to-secondary/5 rounded-xl p-8 border border-border h-full flex flex-col"
                 >
                   <div className="absolute -top-4 -left-4 w-12 h-12 bg-primary rounded-full flex items-center justify-center text-primary-foreground font-bold">
                     {index + 1}
@@ -99,7 +99,7 @@ export default function AboutPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-4 gap-8">
               {[
-                { number: "40+", label: "Products", sublabel: "Pharmaceutical Solutions" },
+                { number: "50+", label: "Products", sublabel: "Pharmaceutical Solutions" },
                 { number: "5L+", label: "Patients", sublabel: "Served Annually" },
                 { number: "98%", label: "Satisfaction", sublabel: "Customer Rating" },
                 { number: "50+", label: "Employees", sublabel: "Dedicated Team" },

@@ -37,23 +37,12 @@ export default function Footer() {
             </p>
             <div className="flex gap-4">
               <a
-                href="#"
+                href="https://www.linkedin.com/company/health-berry-lifesciences/"
                 className="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-primary transition-colors"
               >
                 <Linkedin size={18} />
               </a>
-              <a
-                href="#"
-                className="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-primary transition-colors"
-              >
-                <Facebook size={18} />
-              </a>
-              <a
-                href="#"
-                className="w-10 h-10 bg-slate-800 rounded-lg flex items-center justify-center hover:bg-primary transition-colors"
-              >
-                <Twitter size={18} />
-              </a>
+              
             </div>
           </div>
 
@@ -143,10 +132,10 @@ export default function Footer() {
                     info@healthberrylifesciences.com
                   </a>
                   <a
-                    href="mailto:sales@healthberrylifesciences.com"
+                    href="mailto:pmt@healthberrylifesciences.com"
                     className="text-gray-400 hover:text-primary transition-colors block"
                   >
-                    sales@healthberrylifesciences.com
+                    pmt@healthberrylifesciences.com
                   </a>
                 </div>
               </li>

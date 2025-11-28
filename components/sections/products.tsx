@@ -61,7 +61,7 @@ export default function Products() {
                   <div className="group glow-card rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 h-full flex flex-col">
                   {/* Product Image */}
                   {product.image && (
-                    <div className="relative h-56 bg-gradient-to-br from-blue-50 to-green-50 overflow-hidden">
+                    <div className="relative h-64 bg-gradient-to-br from-blue-50 to-green-50 overflow-hidden">
                       <Image
                         src={product.image}
                         alt={product.name}

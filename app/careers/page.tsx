@@ -10,8 +10,8 @@ export default function CareersPage() {
         {/* Page Header */}
         <section className="bg-gradient-to-br from-blue-50 to-green-50 py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center">
-              <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-4">Careers</h1>
+            <div className="text-center fade-in-up">
+              <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-4">Join Our Team</h1>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
                 Join Our Team and Build Your Future with Health Berry Lifesciences
               </p>
@@ -42,7 +42,7 @@ export default function CareersPage() {
                     <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                       <Users className="w-8 h-8 text-primary" />
                     </div>
-                    <h3 className="text-2xl font-bold text-primary mb-1">2000+</h3>
+                    <h3 className="text-2xl font-bold text-primary mb-1">50+</h3>
                     <p className="text-sm text-muted-foreground">Team Members</p>
                   </div>
                   <div className="text-center">

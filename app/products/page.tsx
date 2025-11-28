@@ -227,7 +227,7 @@ function ProductCard({
       >
       {/* Product Image */}
       {product.image && (
-        <div className="relative h-48 md:h-56 bg-gradient-to-br from-blue-50 to-green-50 overflow-hidden">
+        <div className="relative h-64 bg-gradient-to-br from-blue-50 to-green-50 overflow-hidden">
           <Image
             src={product.image}
             alt={product.name}

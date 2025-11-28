@@ -70,12 +70,12 @@ export default function ProductDetailPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <button
               onClick={() => router.back()}
-              className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors mb-4"
+              className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors mb-4 fade-in"
             >
               <ArrowLeft size={20} />
               <span className="font-medium">Back to Products</span>
             </button>
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-3 fade-in-up">
               <span className="px-3 py-1 bg-primary/10 text-primary text-sm font-bold rounded-full">
                 {product.category}
               </span>
@@ -89,7 +89,7 @@ export default function ProductDetailPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               {/* Left: 3D Viewer */}
-              <div className="order-2 lg:order-1">
+              <div className="order-2 lg:order-1 fade-in-up stagger-1">
                 <div className="sticky top-24">
                   <h2 className="text-xl font-bold text-foreground mb-4">Interactive 3D View</h2>
                   <p className="text-sm text-muted-foreground mb-6">
@@ -106,7 +106,7 @@ export default function ProductDetailPage() {
               {/* Right: Product Information */}
               <div className="order-1 lg:order-2 space-y-8">
                 {/* Composition Section */}
-                <div className="bg-gradient-to-br from-blue-50 to-green-50 rounded-2xl p-6 border border-border">
+                <div className="bg-gradient-to-br from-blue-50 to-green-50 rounded-2xl p-6 border border-border fade-in-up stagger-2">
                   <div className="flex items-start gap-3 mb-4">
                     <FlaskConical className="text-primary flex-shrink-0 mt-1" size={24} />
                     <div>
@@ -117,7 +117,7 @@ export default function ProductDetailPage() {
                 </div>
 
                 {/* Product Specifications */}
-                <div className="bg-white rounded-2xl p-6 border border-border shadow-sm">
+                <div className="bg-white rounded-2xl p-6 border border-border shadow-sm fade-in-up stagger-3">
                   <h3 className="text-lg font-bold text-foreground mb-6 flex items-center gap-2">
                     <Package className="text-primary" size={24} />
                     Product Specifications
@@ -148,7 +148,7 @@ export default function ProductDetailPage() {
                 </div>
 
                 {/* Key Features */}
-                <div className="bg-gradient-to-br from-primary/5 to-secondary/5 rounded-2xl p-6 border border-border">
+                <div className="bg-gradient-to-br from-primary/5 to-secondary/5 rounded-2xl p-6 border border-border fade-in-up stagger-4">
                   <h3 className="text-lg font-bold text-foreground mb-4">Key Features</h3>
                   <ul className="space-y-3">
                     <li className="flex items-start gap-3">

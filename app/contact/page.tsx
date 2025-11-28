@@ -39,7 +39,7 @@ export default function ContactPage() {
           Accept: "application/json",
         },
         body: JSON.stringify({
-          access_key: "",
+          access_key: "a343e392-ccd0-4d08-9d02-3ce2eef74a2b",
           name: formData.name,
           email: formData.email,
           phone: formData.phone,
@@ -72,20 +72,20 @@ export default function ContactPage() {
     {
       icon: MapPin,
       title: "Office Address",
-      details: "Office No.2, S. No 40/2, Near Sinhgad College",
-      sublabel: "Kondhawa Budruk, Pune, Maharashtra 411048",
+      details: "Office No.2, S. No 40/2, Near Sinhgad College Kondhawa Budruk, Pune, Maharashtra 411048",
+      sublabel: "",
     },
     {
       icon: Mail,
       title: "Email",
-      details: "info@healthberrylifesciences.com",
-      sublabel: "pmt@healthberrylifesciences.com ",
+      details: "info@healthberrylifesciences.com pmt@healthberrylifesciences.com",
+      sublabel: "",
     },
     {
       icon: Clock,
       title: "Business Hours",
-      details: "Monday - Saturday 10:00 AM - 6:00 PM",
-      sublabel: "Saturday 10:00 AM - 2:00 PM  Sunday Off",
+      details: "Monday - Friday: 10:00 AM - 6:00 PM | Saturday: 10:00 AM - 2:00 PM | Sunday: Closed",
+      sublabel: "",
     },
   ]
 
@@ -96,7 +96,7 @@ export default function ContactPage() {
         {/* Page Header */}
         <section className="bg-gradient-to-br from-blue-50 to-green-50 py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center">
+            <div className="text-center fade-in-up">
               <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-4">Contact Us</h1>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
                 Get in touch with our team. We'd love to hear from you.
