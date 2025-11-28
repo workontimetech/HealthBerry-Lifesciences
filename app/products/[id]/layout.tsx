@@ -54,7 +54,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: `${product.name} | ${product.composition} - Health Berry Lifesciences`,
       description: `WHO-GMP certified ${product.name}. ${product.composition}, ${product.form} ${product.strength}. Quality ${product.category} medicine from leading pharmaceutical manufacturer in India.`,
       url: productUrl,
-      type: 'product',
+      type: 'website',
       siteName: 'Health Berry Lifesciences',
       images: [
         {
