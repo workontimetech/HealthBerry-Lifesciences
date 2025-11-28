@@ -5,9 +5,9 @@ import { Shield, Award, CheckSquare } from "lucide-react"
 const certifications = [
   { icon: Shield, title: "GMP", description: "Good Manufacturing Practice" },
   { icon: Award, title: "ISO 9001:2015", description: "Quality Management" },
-  { icon: CheckSquare, title: "WHO", description: "WHO Guidelines Compliant" },
   { icon: Shield, title: "USFDA", description: "United States Food and Drug Administration" },
-]
+  { icon: CheckSquare, title: "WHO", description: "WHO Guidelines Compliant" },
+  ]
 
 export default function Certifications() {
   return (
