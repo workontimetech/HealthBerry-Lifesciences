@@ -77,16 +77,26 @@ export default function ProductDetailPage() {
             "mpn": product.id.toString(),
             "brand": {
               "@type": "Brand",
-              "name": "Health Berry Lifesciences"
+              "name": "Health Berry Lifesciences",
+              "logo": "https://healthberrylifesciences.com/Healthberry-Pharma-logo.jpg"
             },
             "manufacturer": {
               "@type": "Organization",
               "name": "Health Berry Lifesciences Pvt. Ltd.",
-              "url": "https://healthberrylifesciences.com"
+              "url": "https://healthberrylifesciences.com",
+              "logo": "https://healthberrylifesciences.com/Healthberry-Pharma-logo.jpg"
             },
             "category": product.category,
-            "image": `https://healthberrylifesciences.com${product.image}`,
+            "image": [
+              `https://healthberrylifesciences.com${product.image}`,
+              "https://healthberrylifesciences.com/Healthberry-Pharma-logo.jpg"
+            ],
             "additionalProperty": [
+              {
+                "@type": "PropertyValue",
+                "name": "Product Name",
+                "value": `${product.name} ${product.strength}`
+              },
               {
                 "@type": "PropertyValue",
                 "name": "Composition",
@@ -115,7 +125,8 @@ export default function ProductDetailPage() {
               "priceCurrency": "INR",
               "seller": {
                 "@type": "Organization",
-                "name": "Health Berry Lifesciences Pvt. Ltd."
+                "name": "Health Berry Lifesciences Pvt. Ltd.",
+                "logo": "https://healthberrylifesciences.com/Healthberry-Pharma-logo.jpg"
               }
             },
             "aggregateRating": {

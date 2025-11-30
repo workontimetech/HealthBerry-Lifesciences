@@ -100,15 +100,24 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
           url: `https://healthberrylifesciences.com${productImage}`,
           width: 800,
           height: 600,
-          alt: `${product.name} - ${product.composition} - Health Berry Lifesciences`,
+          alt: `${product.name} ${product.strength} - ${product.composition}`,
+        },
+        {
+          url: 'https://healthberrylifesciences.com/Healthberry-Pharma-logo.jpg',
+          width: 600,
+          height: 200,
+          alt: 'Health Berry Lifesciences - Pharmaceutical Manufacturer',
         },
       ],
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${product.name} | ${product.category} Medicine`,
-      description: `${product.composition}. ${product.form}, Strength: ${product.strength}. WHO-GMP certified pharmaceutical product.`,
-      images: [`https://healthberrylifesciences.com${productImage}`],
+      title: `${product.name} ${product.strength} | ${product.category} Medicine - Health Berry Lifesciences`,
+      description: `Buy ${product.name} (${product.composition}). ${product.form}, Strength: ${product.strength}. WHO-GMP certified pharmaceutical product from Health Berry Lifesciences.`,
+      images: [
+        `https://healthberrylifesciences.com${productImage}`,
+        'https://healthberrylifesciences.com/Healthberry-Pharma-logo.jpg'
+      ],
     },
     alternates: {
       canonical: productUrl,

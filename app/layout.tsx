@@ -137,11 +137,44 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Health Berry Lifesciences Pvt. Ltd.",
+    "url": "https://healthberrylifesciences.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://healthberrylifesciences.com/Healthberry-Pharma-logo.jpg",
+      "width": 600,
+      "height": 200
+    },
+    "image": "https://healthberrylifesciences.com/Healthberry-Pharma-logo.jpg",
+    "description": "WHO-GMP & ISO 9001:2015 certified pharmaceutical company providing quality medicines across therapeutic segments. Leading manufacturer of Anti-Diabetic, Anti-Hypertensive, and Dyslipidemia medicines in India.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "IN",
+      "addressRegion": "Maharashtra"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+919960560515",
+      "contactType": "Customer Service",
+      "availableLanguage": ["English", "Hindi"]
+    },
+    "sameAs": [
+      "https://healthberrylifesciences.com"
+    ]
+  }
+
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="canonical" href="https://healthberrylifesciences.com" />
         <meta name="google-site-verification" content="YtByip9JY_m4vojLzFf1YcVtaYXdsjTnVp0p-CgkObA" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
       </head>
       <body className={`${poppins.className} font-sans antialiased`}>
         {children}
