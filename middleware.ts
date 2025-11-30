@@ -4,8 +4,9 @@ import type { NextRequest } from 'next/server'
 export function middleware(request: NextRequest) {
   const url = request.nextUrl.clone()
   
-  // Specific redirects for known old PHP URLs (handle these first)
+  // Specific redirects for common old URLs and Bing cached URLs
   const redirects: Record<string, string> = {
+    // Old PHP pages
     '/products.php': '/products',
     '/about.php': '/about',
     '/aboutus.php': '/about',
@@ -18,6 +19,14 @@ export function middleware(request: NextRequest) {
     '/quality.php': '/quality',
     '/home.php': '/',
     '/index.php': '/',
+    
+    // Bing cached incorrect URLs (from old sitelinks)
+    '/index': '/',
+    '/about_us': '/about',
+    '/product': '/products',
+    '/career': '/careers',
+    '/contact_us': '/contact',
+    '/home': '/',
   }
   
   // Check for exact matches first
