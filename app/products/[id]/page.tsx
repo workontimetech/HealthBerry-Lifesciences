@@ -64,6 +64,42 @@ export default function ProductDetailPage() {
   return (
     <>
       <Navbar />
+      {/* BreadcrumbList Schema for better site structure understanding */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://healthberrylifesciences.com"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Products",
+                "item": "https://healthberrylifesciences.com/products"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": product.category,
+                "item": `https://healthberrylifesciences.com/products?category=${product.category}`
+              },
+              {
+                "@type": "ListItem",
+                "position": 4,
+                "name": `${product.name} ${product.strength}`,
+                "item": `https://healthberrylifesciences.com/products/${product.id}`
+              }
+            ]
+          })
+        }}
+      />
       {/* Product Schema Structured Data for Google */}
       <script
         type="application/ld+json"
