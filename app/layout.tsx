@@ -128,7 +128,10 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: "YOUR_GOOGLE_VERIFICATION_CODE",
+    google: "YtByip9JY_m4vojLzFf1YcVtaYXdsjTnVp0p-CgkObA",
+    other: {
+      "msvalidate.01": "ADD_YOUR_BING_VERIFICATION_CODE_HERE",
+    },
   },
 }
 
@@ -171,6 +174,11 @@ export default function RootLayout({
       <head>
         <link rel="canonical" href="https://healthberrylifesciences.com" />
         <meta name="google-site-verification" content="YtByip9JY_m4vojLzFf1YcVtaYXdsjTnVp0p-CgkObA" />
+        <meta name="msvalidate.01" content="ADD_YOUR_BING_VERIFICATION_CODE_HERE" />
+        <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+        <meta httpEquiv="cache-control" content="no-cache" />
+        <meta httpEquiv="expires" content="0" />
+        <meta httpEquiv="pragma" content="no-cache" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
