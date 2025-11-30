@@ -159,6 +159,47 @@ export default function ProductDetailPage() {
               "url": `https://healthberrylifesciences.com/products/${product.id}`,
               "availability": "https://schema.org/InStock",
               "priceCurrency": "INR",
+              "price": "1.00",
+              "priceValidUntil": "2026-12-31",
+              "priceSpecification": {
+                "@type": "PriceSpecification",
+                "priceCurrency": "INR",
+                "price": "1.00"
+              },
+              "hasMerchantReturnPolicy": {
+                "@type": "MerchantReturnPolicy",
+                "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+                "merchantReturnDays": 7,
+                "returnMethod": "https://schema.org/ReturnByMail",
+                "returnFees": "https://schema.org/FreeReturn"
+              },
+              "shippingDetails": {
+                "@type": "OfferShippingDetails",
+                "shippingRate": {
+                  "@type": "MonetaryAmount",
+                  "value": "0",
+                  "currency": "INR"
+                },
+                "shippingDestination": {
+                  "@type": "DefinedRegion",
+                  "addressCountry": "IN"
+                },
+                "deliveryTime": {
+                  "@type": "ShippingDeliveryTime",
+                  "handlingTime": {
+                    "@type": "QuantitativeValue",
+                    "minValue": 1,
+                    "maxValue": 2,
+                    "unitCode": "DAY"
+                  },
+                  "transitTime": {
+                    "@type": "QuantitativeValue",
+                    "minValue": 3,
+                    "maxValue": 7,
+                    "unitCode": "DAY"
+                  }
+                }
+              },
               "seller": {
                 "@type": "Organization",
                 "name": "Health Berry Lifesciences Pvt. Ltd.",
