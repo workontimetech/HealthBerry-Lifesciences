@@ -4,14 +4,7 @@ import type { NextRequest } from 'next/server'
 export function middleware(request: NextRequest) {
   const url = request.nextUrl.clone()
   
-  // Redirect all .php pages to their non-.php equivalents
-  if (url.pathname.endsWith('.php')) {
-    const newPath = url.pathname.replace('.php', '')
-    url.pathname = newPath
-    return NextResponse.redirect(url, 301) // Permanent redirect
-  }
-  
-  // Specific redirects for common old URLs
+  // Specific redirects for known old PHP URLs (handle these first)
   const redirects: Record<string, string> = {
     '/products.php': '/products',
     '/about.php': '/about',
@@ -27,8 +20,16 @@ export function middleware(request: NextRequest) {
     '/index.php': '/',
   }
   
+  // Check for exact matches first
   if (redirects[url.pathname]) {
     url.pathname = redirects[url.pathname]
+    return NextResponse.redirect(url, 301)
+  }
+  
+  // For any other .php file, just remove the .php extension
+  if (url.pathname.endsWith('.php')) {
+    const newPath = url.pathname.replace('.php', '')
+    url.pathname = newPath
     return NextResponse.redirect(url, 301)
   }
   
