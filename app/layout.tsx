@@ -130,7 +130,7 @@ export const metadata: Metadata = {
   verification: {
     google: "YtByip9JY_m4vojLzFf1YcVtaYXdsjTnVp0p-CgkObA",
     other: {
-      "msvalidate.01": "ADD_YOUR_BING_VERIFICATION_CODE_HERE",
+      "msvalidate.01": "66561E45D73651D069316A81EEA8B250",
     },
   },
 }
