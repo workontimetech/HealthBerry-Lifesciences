@@ -71,8 +71,10 @@ export default function ProductDetailPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Product",
-            "name": product.name,
-            "description": `${product.composition}. ${product.form} with strength ${product.strength}.`,
+            "name": `${product.name} ${product.strength}`,
+            "description": `${product.name} (${product.composition}). ${product.form} with strength ${product.strength}. WHO-GMP certified ${product.category} medicine by Health Berry Lifesciences.`,
+            "sku": `HBL-${product.id}`,
+            "mpn": product.id.toString(),
             "brand": {
               "@type": "Brand",
               "name": "Health Berry Lifesciences"
@@ -84,6 +86,28 @@ export default function ProductDetailPage() {
             },
             "category": product.category,
             "image": `https://healthberrylifesciences.com${product.image}`,
+            "additionalProperty": [
+              {
+                "@type": "PropertyValue",
+                "name": "Composition",
+                "value": product.composition
+              },
+              {
+                "@type": "PropertyValue",
+                "name": "Form",
+                "value": product.form
+              },
+              {
+                "@type": "PropertyValue",
+                "name": "Strength",
+                "value": product.strength
+              },
+              {
+                "@type": "PropertyValue",
+                "name": "Certification",
+                "value": "WHO-GMP Certified"
+              }
+            ],
             "offers": {
               "@type": "Offer",
               "url": `https://healthberrylifesciences.com/products/${product.id}`,
@@ -117,7 +141,7 @@ export default function ProductDetailPage() {
               <span className="px-3 py-1 bg-primary/10 text-primary text-sm font-bold rounded-full">
                 {product.category}
               </span>
-              <h1 className="text-3xl md:text-4xl font-bold text-foreground">{product.name}</h1>
+              <h1 className="text-3xl md:text-4xl font-bold text-foreground">{product.name} {product.strength}</h1>
             </div>
           </div>
         </section>
