@@ -168,6 +168,7 @@ export default function ProductDetailPage() {
               },
               "hasMerchantReturnPolicy": {
                 "@type": "MerchantReturnPolicy",
+                "applicableCountry": "IN",
                 "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
                 "merchantReturnDays": 7,
                 "returnMethod": "https://schema.org/ReturnByMail",
